@@ -63,7 +63,6 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    check --> |Não| B[/ Negativo /]
    A --> final([Fim])
    B --> final
-   
    ```
    
 5. Desenvolva um fluxograma que leia a idade de uma pessoa e indique se ela pode votar.
@@ -98,7 +97,20 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    
    ```mermaid
    flowchart TD
-      
+      A[Início] --> B[Leia número A]
+    B --> C[Leia número B]
+    C --> D[Leia número C]
+    D --> E{A > B?}
+    E -- Sim --> F{A > C?}
+    F -- Sim --> G[Maior = A]
+    F -- Não --> H[Maior = C]
+    E -- Não --> I{B > C?}
+    I -- Sim --> J[Maior = B]
+    I -- Não --> K[Maior = C]
+    G --> L[Fim]
+    H --> L
+    J --> L
+    K --> L
    ```
    
 8. Construa um fluxograma para calcular o fatorial de um número fornecido pelo usuário.
@@ -138,5 +150,17 @@ Para mais informações acesse [Aula 01: Fluxogramas.](https://www.notion.so/cai
    
    ```mermaid
    flowchart TD
-      I["Sua resposta aqui!"]
+    A[Início] --> B[Leia número N]
+    B --> C{N <= 1?}
+    C -- Sim --> D[Não é primo]
+    C -- Não --> E[Defina i = 2]
+    E --> F{i * i <= N?}
+    F -- Não --> G[É primo]
+    F -- Sim --> H{N % i == 0?}
+    H -- Sim --> I[Não é primo]
+    H -- Não --> J[i = i + 1]
+    J --> F
+    D --> K[Fim]
+    G --> K
+    I --> K
    ```
