@@ -9,7 +9,8 @@ public class Main {
         };
         System.out.println("Diagonal secundaria:");
         for (int i = 0; i < 5;i++ ){
-            System.out.print(matriz[i][i] + " ");
+            int j = 4 - i;
+            System.out.print(matriz[i][j] + " ");
         }
 
     }
